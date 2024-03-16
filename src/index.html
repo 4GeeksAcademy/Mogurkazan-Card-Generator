@@ -19,19 +19,25 @@
       class="card rounded mt-50px position-relative"
       style="width: 300px; height: 500px"
     >
-      <div class="position-absolute top-0 start-0 mt-2 ms-2" id="iconTop" icon>
-        Icono top
-      </div>
+      <!--imagen previa prueba-->
+      <img
+        id="imagenPrevia"
+        src="https://cdn.pixabay.com/photo/2013/07/13/13/45/playing-card-161465_640.png"
+      />
+      <div
+        class="position-absolute top-0 start-0 mt-2 ms-2"
+        id="iconTop"
+        icon
+      ></div>
       <div class="card-body d-flex justify-content-center align-items-center">
-        <div class="text-center" id="number">Number</div>
+        <div class="text-center" id="number"></div>
       </div>
       <div
         class="position-absolute bottom-0 end-0 mb-2 me-3"
         style="height: 70px;"
         id="iconBottom"
-      >
-        icon Bottom
-      </div>
+      ></div>
     </div>
+    <button id="baraja" onclick="getRandomCard()" class="ms-5">Mi botón</button>
   </body>
 </html>
