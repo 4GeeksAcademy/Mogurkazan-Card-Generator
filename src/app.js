@@ -10,13 +10,32 @@ import "./assets/img/4geeks.ico";
 //};
 //array con los números posibles
 const numbers = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q"];
-//array con los palos posibles
 const palos = ["♦", "♥", "♠", "♣"];
-//generar número aleatorio para los números de cartas
-const getRandomNumber = numbers[Math.floor(Math.random() * numbers.length)];
-const getRandomPalo = palos[Math.floor(Math.random() * palos.length)];
-console.log(getRandomNumber);
-console.log(getRandomPalo);
-//generar número aleatorio para los palos
-//función para generar palo y numero aleatorio
-//
+palos[0] = '<span style="color:red;">' + palos[0] + "</span>"; // Diamantes
+palos[1] = '<span style="color:red;">' + palos[1] + "</span>"; // Corazones
+//Coger un elemento aleatorio de los 2 array
+function getRandomElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+//Generar la carta aleatoria
+function getRandomCard() {
+  const numberItem = document.getElementById("number");
+  const iconItem = document.getElementById("iconTop");
+  const iconItemBottom = document.getElementById("iconBottom");
+
+  const randomNumber = getRandomElement(numbers);
+  const randomPalo = getRandomElement(palos);
+
+  numberItem.textContent = randomNumber;
+  iconItem.innerHTML = randomPalo;
+  iconItemBottom.innerHTML = randomPalo;
+
+  //Cambiar estilos
+  iconItem.style.fontSize = "80px";
+  iconItem.style.maxHeight = "20%";
+  iconItemBottom.style.fontSize = "80px";
+  iconItemBottom.style.transform = "rotate(180deg)";
+  numberItem.style.fontSize = "150px";
+}
+
+getRandomCard();
